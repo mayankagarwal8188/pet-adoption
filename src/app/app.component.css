@@ -1,0 +1,24 @@
+.nav-bar {
+  background-image: url('../assets/nav-image.png') !important;
+  height: 130px;
+  width: auto;
+  /* object-fit: contain; */
+  background-size: cover;
+}
+
+.humane-heading-text {
+  width: 830px;
+  height: 68px;
+  font-family: Graphik, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.94;
+  letter-spacing: normal;
+  color: #ffffff;
+  padding: 47px 0 0 40px;
+  outline: none;
+  cursor: pointer;
+  margin-left: 20px;
+}

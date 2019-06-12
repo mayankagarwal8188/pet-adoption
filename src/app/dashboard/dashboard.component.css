@@ -1,0 +1,124 @@
+.text-filter {
+    font-size: 14px;
+    width: 40%;
+    margin: 0 25px;
+  }
+  
+  .mat-paginator {
+    width: 45%;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+  
+  .paginator {
+    margin: -7px 0 0px 0;
+  }
+  
+  .filter-container {
+    background-color: #D8D8D8;
+    padding: 20px 60px 0;
+  }
+  
+  .open-ticket-filter {
+    margin-bottom: 20px;
+  }
+  
+  .mat-dropdown {
+    width: 20%;
+  }
+  
+  .mat-paginator{
+    background: none;
+  }
+  
+  ::ng-deep input.mat-input-element {
+    padding-left: 10px;
+  }
+  
+  ::ng-deep th:first-child, td:first-child {
+    padding-left: 60px !important;
+  }
+  
+  ::ng-deep .mat-select-value-text {
+    padding-left: 10px;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+    border: 1px solid lightgray;
+    background: white;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+    display: none;
+  }
+  
+  ::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow{
+    color: rgba(0,0,0,.54);
+  }
+
+  .animal-data {
+    margin: 40px 60px;
+  }
+  
+  .manage-animals-card {
+    margin: 0 24px 20px 0;
+    cursor: pointer;
+    max-height: 460px;
+    max-width: 357px;
+  }
+
+  .manage-animals-card-image {
+    height: 280px;
+  }
+
+  .animal-name {
+    font-size: 20px;
+    line-height: normal;
+    letter-spacing: 0.25px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .animal-description {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+  }
+
+  .animal-radio-group {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0;
+  }
+  
+  .animal-radio-button {
+    margin: 5px;
+  }
+
+  .display-inline {
+      display: inline-block;
+      margin-right: 45px;
+  }
+
+  .radio-label {
+      padding-left: 5px;
+  }
+
+  .view-details-btn {
+    height: 34px;
+    width: 100%;
+    background-color: #0008cc;
+    padding: 0;
+    color: #FFF;
+  }
+
+  .btn:focus {
+    outline: none;
+    box-shadow: none !important;
+  }

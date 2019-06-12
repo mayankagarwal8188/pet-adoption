@@ -1,0 +1,55 @@
+<div *ngIf="animalData">
+  <div class="container">
+    <h1 class="title-name">{{animalData.name}}</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="animal-image image-frame">
+          <img [src]="mainImage">
+        </div>
+        <div>Select a thumbnail to view the photo</div>
+        <div class="thumbnail-images">
+          <div class="photo"><a (click)="mainImageChange($event)" class="photo1"><img class="photo1"
+                [src]="thumbnailImage" alt="Misty"></a></div>
+          <!-- <div class="photo"><a class="photo2" href="https://g.petango.com/photos/1686/52ef9850-c845-4ec0-b33d-31c72c31f895.jpg"><img class="photo2" src="https://g.petango.com/photos/1686/52ef9850-c845-4ec0-b33d-31c72c31f895.jpg" alt="Misty"></a></div>
+            <div class="photo"><a class="photo3" href="https://g.petango.com/photos/1686/8ded2677-03ae-4121-ac06-e9ff38efa2bf.jpg"><img class="photo3" src="https://g.petango.com/photos/1686/8ded2677-03ae-4121-ac06-e9ff38efa2bf.jpg" alt="Misty"></a></div> -->
+        </div>
+      <button [disabled]="disableAdoptButton" class="btn btn-primary adopt-btn" type="button" (click)="openSnackBar()">Adopt Me!</button>
+      </div>
+      <div class="col-md-6">
+        <table mat-table [dataSource]="animalTableData" class="mat-elevation-z8">
+          <!-- Item Column -->
+          <ng-container matColumnDef="feature">
+            <th mat-header-cell *matHeaderCellDef> Feature </th>
+            <td mat-cell *matCellDef="let animaldta"> {{animaldta.feature | titlecase}} </td>
+            <!-- <td mat-footer-cell *matFooterCellDef> Total </td> -->
+          </ng-container>
+
+          <!-- Cost Column -->
+          <ng-container matColumnDef="value">
+            <th mat-header-cell *matHeaderCellDef> Details </th>
+            <td mat-cell *matCellDef="let animaldta"> {{animaldta.value | titlecase}} </td>
+            <!-- <td mat-footer-cell *matFooterCellDef> {{getTotalCost() | currency}} </td> -->
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <!-- <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr> -->
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12" id="about-this-pet-container">
+          <h4>About This Pet</h4>
+          <p class="description">With her big green eyes, her loud purr, and her adorable, whisper of a meow, 
+            Misty is a charming senior girl who just wants to snuggle up into you and fall asleep. 
+            She'll knead her blanket, give head butts, and melt the heck out of your heart. 
+            She also loves having company when she eats. She wants to eat while hearing about your 
+            day!  <br><br>She would prefer to be the only animal in an adult-only home. 
+            This senior girl is looking for a loving retirement home where she can knead all 
+            blankets and get all the scratches she wants. Come say hi! <br><br>Misty is currently 
+            living in a foster home. If you'd like to know more about her, drop us a line at.</p>
+        </div>
+      </div>
+  </div>
+</div>

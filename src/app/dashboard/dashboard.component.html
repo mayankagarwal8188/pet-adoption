@@ -1,0 +1,58 @@
+<mat-error class="get-dashboard-error" *ngIf="getError">{{getError}}</mat-error>
+<div class="filter-container">
+  <span class="display-inline">
+    <label class="radio-label">Select Animal Type</label>
+    <mat-radio-group aria-labelledby="animal-radio-group-label" class="animal-radio-group"
+      [(ngModel)]="animalTypeSelected" (change)="applyFilter()">
+      <mat-radio-button color="primary" class="animal-radio-button" *ngFor="let animalType of animalTypes"
+        [value]="animalType">
+        {{animalType}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </span>
+  <span class="display-inline">
+    <label class="radio-label">Select Gender</label>
+    <mat-radio-group aria-labelledby="animal-radio-group-label" class="animal-radio-group" [(ngModel)]="genderSelected"
+      (change)="applyFilter()">
+      <mat-radio-button color="primary" class="animal-radio-button" *ngFor="let gender of genders" [value]="gender">
+        {{gender}}
+      </mat-radio-button>
+    </mat-radio-group>
+  </span>
+  <span class="flex-container">
+    <mat-form-field class="mat-dropdown">
+      <mat-label>&nbsp;Column to filter within</mat-label>
+      <mat-select name="aisle" (selectionChange)="applyFilter()" [(ngModel)]="columnFilter">
+        <mat-option [value]="option.value" *ngFor="let option of dropDownValues">{{option.viewValue}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="text-filter" style="font-size: 17px">
+      <mat-label>&nbsp;Search columns for</mat-label>
+      <input matInput (keyup)="applyFilter()" [(ngModel)]="filterValue" placeholder="Filter">
+    </mat-form-field>
+    <mat-paginator class="paginator" [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+      showFirstLastButtons (page)="onPageChanged($event)"></mat-paginator>
+  </span>
+</div>
+
+<div class="animal-data">
+  <div class="container-fluid">
+    <div class="row">
+      <mat-card [routerLink]="['../adopt', animal.type, animal.id]" class="manage-animals-card col-md-4"
+        *ngFor="let animal of activePageDataChunk">
+        <img class="manage-animals-card-image" mat-card-image
+          [src]="animal.picture ? '../../assets/' + animal.picture : ''" alt="Animal image">
+        <mat-card-content>
+          <div class="animal-name">{{animal.name}}</div>
+          <div class="animal-description">
+            <div>Gender: {{animal.gender}}</div>
+            <div>Breed: {{animal.breed}}</div>
+            <div>Age: {{animal.age}}</div>
+            <div>Type: {{animal.type}}</div>
+          </div>
+        </mat-card-content>
+        <button class="btn btn-primary view-details-btn" type="button">VIEW DETAILS</button>
+      </mat-card>
+    </div>
+  </div>
+</div>
